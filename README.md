@@ -1,6 +1,14 @@
 # Lightning Web Component - Calendar Redirect
 
-A Lightning Web Component for navigating to the Salesforce Events Calendar UI in the mobile app, especially for Partner Users or in other community (Experience Cloud Site) contexts where standard support of the Events Calendar is not officially supported. See detailed in Salesforce documentation here: https://help.salesforce.com/s/articleView?id=experience.networks_access_in_salesforce1_limitations.htm&type=5
+A Lightning Web Component for navigating to the Salesforce Events Calendar UI in the mobile app, especially for Partner Users or in other community (Experience Cloud Site) contexts where standard support of the Events Calendar is not officially supported. 
+
+## Problem
+
+The standard Salesforce Events Calendar UI is not officially supported in the Salesforce Mobile App for Communtiy (Experience Cloud Site) Users.
+
+This limitation is detailed here: https://help.salesforce.com/s/articleView?id=experience.networks_access_in_salesforce1_limitations.htm&type=5
+
+This aims to restore that functionality by a simple redirect LWC. 
 
 ## Features
 
@@ -8,12 +16,6 @@ A Lightning Web Component for navigating to the Salesforce Events Calendar UI in
 - ✅ Fallback navigation methods for mobile apps
 - ✅ Multiple error handling layers
 - ✅ Works in Lightning Experience and Salesforce Mobile App
-
-## Problem
-
-The standard Salesforce Events Calendar UI is not officially supported in the Mobile App for Partner Users. This aims to restore that functionality by a simple redirect LWC. 
-
-The `NavigationMixin` method doesn't always work reliably in Salesforce mobile app contexts. This component provides multiple fallback methods to ensure users can always reach the calendar.
 
 ## Usage
 
@@ -27,7 +29,7 @@ The component also provides a manual button for user-initiated navigation.
 
 The user will need the following permissions to ensure the redirect and Events calendar work as expected:
 
-As this is mainly created for Partner/Community Users in mind, I'll detail those first. This is assuming you place the component on a lightning page & create a Tab that uses the page.
+As this is mainly created for Partner/Community Users in mind, I'll detail those only. This is assuming you place the component on a lightning page & create a Tab that uses the page.
 
 ### Partner License Profile
 - Edit Events (Enabled)
