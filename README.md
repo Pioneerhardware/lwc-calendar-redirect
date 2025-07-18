@@ -1,6 +1,6 @@
 # Lightning Web Component - Calendar Redirect
 
-A Lightning Web Component for navigating to the Salesforce Events Calendar UI in the mobile app, especially for Partner Users or other community contexts where standard support of the Events Calendar is not officially supported.
+A Lightning Web Component for navigating to the Salesforce Events Calendar UI in the mobile app, especially for Partner Users or in other community contexts where standard support of the Events Calendar is not officially supported.
 
 ## Features
 
