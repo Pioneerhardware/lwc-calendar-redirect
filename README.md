@@ -15,6 +15,39 @@ The standard Salesforce Events Calendar UI is not officially supported in the Mo
 
 The `NavigationMixin` method doesn't always work reliably in Salesforce mobile app contexts. This component provides multiple fallback methods to ensure users can always reach the calendar.
 
+## Usage
+
+### Automatic Redirect
+Place the component on a lightning page for automatic navigation on load.
+
+### Manual Button
+The component also provides a manual button for user-initiated navigation.
+
+## Configuration
+
+The user will need the following permissions to ensure the redirect and Events calendar work as expected:
+
+As this is mainly created for Partner/Community Users in mind, I'll detail those first. This is assuming you place the component on a lightning page & create a Tab that uses the page.
+
+### Partner License Profile
+- Edit Events (Enabled)
+- Access Activities (Enabled)
+- Ensure Tab visilbiity (Default ON)
+
+### Community Site Administration
+- Add Tab to Community Tab Navigation
+
+## Technical Details
+
+### Navigation Methods (in order of attempt):
+1. `NavigationMixin` - Standard Salesforce navigation
+2. `window.location.replace()` - No history entry
+3. `window.location.href` - Standard redirect
+4. `window.open()` - Last resort fallback
+
+### Error Handling
+Each navigation method is wrapped in try-catch blocks to ensure graceful fallbacks.
+
 ## Installation
 
 ### Using Salesforce CLI
@@ -35,42 +68,6 @@ The `NavigationMixin` method doesn't always work reliably in Salesforce mobile a
 1. Download the component files
 2. Copy the `calendarRedirect` folder to your `force-app/main/default/lwc/` directory
 3. Deploy using your preferred method
-
-## Usage
-
-### Automatic Redirect
-Place the component on a page for automatic navigation:
-```html
-<c-calendar-redirect></c-calendar-redirect>
-```
-
-### Manual Button
-The component also provides a manual button for user-initiated navigation.
-
-## Configuration
-
-Add the component to:
-- Lightning App Pages
-- Home Pages  
-- Record Pages
-- Community Pages
-
-## Browser Support
-
-- ✅ Lightning Experience (Desktop)
-- ✅ Salesforce Mobile App (iOS/Android)
-- ✅ Mobile browsers
-
-## Technical Details
-
-### Navigation Methods (in order of attempt):
-1. `NavigationMixin` - Standard Salesforce navigation
-2. `window.location.replace()` - No history entry
-3. `window.location.href` - Standard redirect
-4. `window.open()` - Last resort fallback
-
-### Error Handling
-Each navigation method is wrapped in try-catch blocks to ensure graceful fallbacks.
 
 ## Contributing
 
