@@ -9,9 +9,11 @@ A Lightning Web Component for navigating to the Salesforce Events Calendar UI in
 - ✅ Multiple error handling layers
 - ✅ Works in Lightning Experience and Salesforce Mobile App
 
-## Problem Solved
+## Problem
 
-The standard `NavigationMixin` doesn't always work reliably in Salesforce mobile app contexts. This component provides multiple fallback methods to ensure users can always reach the calendar.
+The standard Salesforce Events Calendar UI is not officially supported in the Mobile App for Partner Users. This aims to restore that functionality by a simple redirect LWC. 
+
+The `NavigationMixin` method doesn't always work reliably in Salesforce mobile app contexts. This component provides multiple fallback methods to ensure users can always reach the calendar.
 
 ## Installation
 
@@ -36,13 +38,13 @@ The standard `NavigationMixin` doesn't always work reliably in Salesforce mobile
 
 ## Usage
 
-### Option 1: Automatic Redirect
+### Automatic Redirect
 Place the component on a page for automatic navigation:
 ```html
 <c-calendar-redirect></c-calendar-redirect>
 ```
 
-### Option 2: Manual Button
+### Manual Button
 The component also provides a manual button for user-initiated navigation.
 
 ## Configuration
